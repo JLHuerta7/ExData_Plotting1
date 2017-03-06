@@ -11,10 +11,14 @@ pldata <- data[which(data$Date == "2007-02-01" | data$Date == "2007-02-02"), ]
 # Data casting (printing variables)
 pldata$Global_active_power <- as.numeric(pldata$Global_active_power)
 
+
+# Creating the png file
+png("plot1.png", width=480, height=480, units = "px", type="windows")
+
 # Painting the histogram
 hist(pldata$Global_active_power, col = "orangered2", main = "Global Active Power", 
      xlab = "Global Active Power (kilowatts)")
 
 # Creating the png file
-dev.copy(png, file = "plot1.png", width = 480, height = 480, units = "px")
+# dev.copy(png, file = "plot1.png", width = 480, height = 480, units = "px")
 dev.off()
